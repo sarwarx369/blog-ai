@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import BlogSearch from "./components/BlogSearch";
 import {
   User,
   Eye,
@@ -42,7 +43,6 @@ const BloggingAI = () => {
 
   const generateAIContent = async (title) => {
     setIsGenerating(true);
-    // Simulate AI content generation
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
     const aiTopics = [
@@ -163,6 +163,9 @@ const BloggingAI = () => {
       <main className="p-6 max-w-7xl mx-auto">
         {currentPage === "dashboard" && (
           <div className="space-y-6">
+            {/* ✅ BlogSearch Component Added Here */}
+            <BlogSearch />
+
             {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <DashboardCard
@@ -194,6 +197,8 @@ const BloggingAI = () => {
                 color="text-yellow-400"
               />
             </div>
+
+            {/* (Rest of the dashboard content continues as before...) */}
 
             {/* Quick Actions */}
             <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
